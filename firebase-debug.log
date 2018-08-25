@@ -1,0 +1,24 @@
+[debug] [2018-08-25T08:51:10.584Z] ----------------------------------------------------------------------
+[debug] [2018-08-25T08:51:10.587Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-08-25T08:51:10.587Z] CLI Version:   4.2.0
+[debug] [2018-08-25T08:51:10.587Z] Platform:      darwin
+[debug] [2018-08-25T08:51:10.587Z] Node Version:  v8.11.3
+[debug] [2018-08-25T08:51:10.588Z] Time:          Sat Aug 25 2018 16:51:10 GMT+0800 (+08)
+[debug] [2018-08-25T08:51:10.588Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-08-25T08:51:10.601Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-08-25T08:51:10.601Z] > authorizing via signed-in user
+[debug] [2018-08-25T08:51:10.604Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/rapbot-studios  
+ 
+[debug] [2018-08-25T08:51:11.661Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-25T08:51:11.662Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/rapbot-studios  
+ 
+[debug] [2018-08-25T08:51:12.985Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Elijah/Documents/GitHub/wapbot'...
+[info] 
+[debug] [2018-08-25T08:51:12.988Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/272484456302/clients/_:getWebAppConfig  
+ 
+[debug] [2018-08-25T08:51:13.625Z] <<< HTTP RESPONSE 200
+[info] i  hosting[rapbot-studios]: Serving hosting files from: public
+[info] ✔  hosting[rapbot-studios]: Local server: http://localhost:5000
