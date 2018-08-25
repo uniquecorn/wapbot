@@ -11,12 +11,12 @@
 @font-face {
   font-family: "Alpha";
   src: url("fonts/Alpha-Light.otf");
-  font-weight: lighter;
+  font-weight: 100;
 }
 @font-face {
   font-family: "Alpha";
   src: url("fonts/Alpha-Inline.otf");
-  font-weight: bolder;
+  font-weight: 900;
 }
 body {
   background: #131313;
@@ -58,48 +58,40 @@ body {
   height: inherit;
   display: inline-block;
   vertical-align: bottom;
-  text-align: right;
-  margin: 0%;
+  text-align: center;
+  margin-top: 10px;
   padding: 0px;
   font-size: 24px;
   font-family: Alpha;
-  font-weight: lighter;
+  font-weight: 100;
   border: none;
   background-color: inherit;
   cursor: pointer;
   perspective: 500px;
   perspective-origin: center;
+  color: white;
+  transform: rotate3d(0, 0, 0, 0deg);
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 /* On mouse-over */
 .btn:hover {
-  animation: buttonFade 2s forwards;
-}
-
-.about {
-  color: white;
-}
-
-.blog {
-  color: white;
-}
-
-.contact {
-  color: white;
-}
-
-.press {
-  color: white;
+  color: #8fff9a;
+  transform: rotate3d(0.75, -1, 0, 20deg);
+  font-weight: 100;
 }
 
 @keyframes buttonFade {
   from {
     color: white;
     transform: rotate3d(0, 0, 0, 0deg);
+    font-weight: bold;
   }
   to {
-    color: green;
-    transform: rotate3d(0.5, 1, 0, 90deg);
+    color: #8fff9a;
+    transform: rotate3d(0.75, -1, 0, 20deg);
+    font-weight: 100;
   }
 }
 
