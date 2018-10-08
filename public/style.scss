@@ -23,16 +23,27 @@ $hoverColor: #8fff9a;
 }
 body {
   background: $bgColor;
-	background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="18" viewBox="0 0 100 18"%3E%3Cpath fill="%239C92AC" fill-opacity="0.1" d="M61.82 18c3.47-1.45 6.86-3.78 11.3-7.34C78 6.76 80.34 5.1 83.87 3.42 88.56 1.16 93.75 0 100 0v6.16C98.76 6.05 97.43 6 96 6c-9.59 0-14.23 2.23-23.13 9.34-1.28 1.03-2.39 1.9-3.4 2.66h-7.65zm-23.64 0H22.52c-1-.76-2.1-1.63-3.4-2.66C11.57 9.3 7.08 6.78 0 6.16V0c6.25 0 11.44 1.16 16.14 3.42 3.53 1.7 5.87 3.35 10.73 7.24 4.45 3.56 7.84 5.9 11.31 7.34zM61.82 0h7.66a39.57 39.57 0 0 1-7.34 4.58C57.44 6.84 52.25 8 46 8S34.56 6.84 29.86 4.58A39.57 39.57 0 0 1 22.52 0h15.66C41.65 1.44 45.21 2 50 2c4.8 0 8.35-.56 11.82-2z"%3E%3C/path%3E%3C/svg%3E');
+  background-image: url('data:image/svg+xml,%3Csvg width="72" height="72" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z" fill="#EFEBE9" fill-opacity="0.1" fill-rule="evenodd"/%3E%3C/svg%3E');
 	margin: 0px;
 }
-
 .bannerBacking {
-	width:auto;
+  top: 0;
+  position:fixed;
+	width:100%;
 	height: 100px;
-	background: $bgColor;
+	animation-name: fadeOut;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
 }
-
+.bannerActive {
+  top: 0;
+  position:fixed;
+	width:100%;
+	height: 100px;
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
 
 .banner {
 	width: inherit;
@@ -88,7 +99,53 @@ body {
 	transform: rotate3d(0.75,-1,0,20deg);
 	font-weight: 100;
 }
+.gameGroup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+.gameGroup > .game {
+	width: calc(99% / 3);
+	height: 200px;
+	display: inline-block;
+	transform: translate(0, 50%);
+}
+.icon {
+	margin: auto;
+	padding: auto;
+	width:200px;
+	height:200px;
+  perspective: 400px;
+  transform: rotate3d(0, 0, 0, 0deg);
+}
+.innerIcon {
+  position: absolute;
+  -webkit-clip-path: inset(0px round 36px);
+  -moz-clip-path: inset(0px round 36px);
+  clip-path: inset(0px round 36px);
+	transition: 1s;
+}
+.innerIcon:hover
+{
+	-webkit-clip-path: inset(5px round 24px);
+  -moz-clip-path: inset(5px round 24px);
+  clip-path: inset(5px round 24px);
+	transform: scale(1.1);
+}
+.outerIcon
+{
+  position: absolute;
+	pointer-events: none;
+}
 
+@keyframes fadeIn {
+    from {background: $bgColor;}
+    to {background: #fff;}
+}
+@keyframes fadeOut {
+    from {background: #fff;}
+    to {background: $bgColor;}
+}
 @keyframes buttonFade
 {
 	from {

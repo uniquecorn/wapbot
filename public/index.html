@@ -3,9 +3,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<title>RapBot Studios</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<div class="bannerBacking">
+		<script src="animejs/anime.min.js"></script>
+		<div class="bannerBacking" id="bannerBack">
 		<div class="banner">
-			<div class="logo"><img src="images/logo.svg" alt="Logo" height="100" width="150"></div>
+			<div class="logo" id="logo"><img src="images/logoWhite.png" alt="Logo" height="100" width="150"></div>
 			<div class="buttonGroup">
 				<a href="#" class="btn about" role="button">ABOUT</a>
 				<a href="http://blog.rapbotstudios.com" class="btn blog" role="button">BLOG</a>
@@ -16,5 +17,39 @@
 	</div>
 	</head>
 	<body>
+  <div class = "gameGroup">
+	<div class = "game">
+<div id = "wurmwood" class="icon">
+	<div class = "innerIcon">
+	<img src="images/wurmLayer1.png" width="200"/>
+  </div>
+  <div class = "outerIcon">
+  <img src="images/wurmLayer2.png" width="200"/>
+  </div>
+</div>
+</div>
+<div class = "game">
+<div id = "vale" class="icon">
+	<div class = "innerIcon">
+	<img src="images/blackhandLayer1.png" width="200"/>
+  </div>
+  <div class = "outerIcon">
+  <img src="images/blackhandLayer2.png" width="200"/>
+  </div>
+</div>
+</div>
+	<div class = "game">
+<div id = "tsuki" class="icon">
+	<div class = "innerIcon">
+	<img src="images/tsukiLayer1.png" width="200"/>
+  </div>
+  <div class = "outerIcon">
+  <img src="images/tsukiLayer2.png" width="200"/>
+  </div>
+</div>
+</div>
+</div>
+  </div>
 	</body>
+	<script src="main.js"></script>
 </html>
