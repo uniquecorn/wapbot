@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 @font-face {
   font-family: "Alpha";
   src: url("fonts/Alpha.otf");
@@ -20,7 +21,7 @@
 }
 body {
   background: #131313;
-  background-image: url('data:image/svg+xml,%3Csvg width="72" height="72" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z" fill="#EFEBE9" fill-opacity="0.1" fill-rule="evenodd"/%3E%3C/svg%3E');
+  background-image: url('data:image/svg+xml,%3Csvg width="72" height="72" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z" fill="%23EFEBE9" fill-opacity="0.1" fill-rule="evenodd"/%3E%3C/svg%3E');
   margin: 0px;
 }
 
@@ -29,56 +30,56 @@ body {
   position: fixed;
   width: 100%;
   height: 100px;
-  animation-name: fadeOut;
-  animation-duration: 0.2s;
-  animation-fill-mode: forwards;
-}
-
-.bannerActive {
-  top: 0;
-  position: fixed;
-  width: 100%;
-  height: 100px;
-  animation-name: fadeIn;
-  animation-duration: 0.2s;
-  animation-fill-mode: forwards;
+  background: #131313;
 }
 
 .banner {
   width: inherit;
   height: inherit;
-  margin-top: 0px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
 }
 
-.logo {
+.bottomBacking {
+  bottom: 0;
   position: fixed;
-  width: 150px;
-  height: 100px;
-  margin: 0px 15px;
-  padding: 0px;
+  width: 100%;
+  height: 50px;
+  background: #131313;
 }
 
 .buttonGroup {
+  display: flex;
+  flex-flow: row nowrap;
   position: relative;
-  float: right;
-  width: 60%;
-  margin: 35px 0px;
-  height: 50px;
-}
-
-.buttonGroup > .btn {
-  width: calc(95% / 4);
+  justify-content: space-between;
+  width: 70%;
+  min-width: 350px;
+  margin: auto;
   height: inherit;
 }
 
+.buttonGroup > .btn {
+  width: 100px;
+  height: 0px;
+}
+
+.logo {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  height: 60px;
+}
+
+.logo > img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .btn {
-  display: inline-block;
+  position: relative;
   vertical-align: middle;
   text-align: center;
-  padding: 0px;
   font-size: 24px;
   font-family: Alpha;
   font-weight: 100;
@@ -86,10 +87,11 @@ body {
   background-color: inherit;
   cursor: pointer;
   perspective: 500px;
-  perspective-origin: center;
   color: white;
   transform: rotate3d(0, 0, 0, 0deg);
   font-weight: bold;
+  top: 40%;
+  transform: translateY(-40%);
   transition: 0.3s;
   text-decoration: none;
 }
@@ -97,45 +99,112 @@ body {
 /* On mouse-over */
 .btn:hover {
   color: #8fff9a;
-  transform: rotate3d(0.75, -1, 0, 20deg);
+  transform: rotate3d(-1, -1, 0.2, 30deg);
   font-weight: 100;
 }
 
 .gameGroup {
-  position: fixed;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  width: 75%;
+  max-width: 1300px;
+  top: 150px;
+  height: 400px;
+  justify-content: space-between;
+  padding: 0;
+  border: 0;
+  margin: auto;
 }
 
-.gameGroup > .game {
-  width: calc(99% / 3);
-  height: 200px;
+.game {
+  width: 20vw;
+  height: 20vw;
+  max-width: 200px;
+  max-height: 200px;
   display: inline-block;
-  transform: translate(0, 50%);
+  transition: 0.3s;
+  transform: translate(0, 15%);
 }
 
 .icon {
   margin: auto;
   padding: auto;
-  width: 200px;
-  height: 200px;
+  width: 100%;
   perspective: 400px;
+  height: 100%;
+  transition: 0.3s;
   transform: rotate3d(0, 0, 0, 0deg);
+  pointer-events: none;
 }
 
+@media (min-width: 601px) {
+  .game:hover .innerIcon {
+    -webkit-clip-path: inset(8% round 50%);
+    -moz-clip-path: inset(8% round 50%);
+    clip-path: inset(8% round 50%);
+    transform: scale(1.25) rotate3d(1, 0.5, 0, 30deg);
+  }
+
+  .game:hover .outerIcon {
+    transform: translateZ(100px) rotate3d(0, -0.5, 0, 20deg) scale(0.9);
+  }
+
+  .game:hover .gameInfo {
+    opacity: 1;
+  }
+}
+@media (max-width: 600px) {
+  .bannerBacking {
+    height: 75px;
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+
+  .game:active .innerIcon {
+    -webkit-clip-path: inset(8% round 50%);
+    -moz-clip-path: inset(8% round 50%);
+    clip-path: inset(8% round 50%);
+    transform: scale(1.25) rotate3d(1, 0.5, 0, 30deg);
+  }
+
+  .game:active .outerIcon {
+    transform: translateZ(100px) rotate3d(0, -0.5, 0, 20deg) scale(0.9);
+  }
+
+  .game:active .gameInfo {
+    opacity: 1;
+  }
+}
 .innerIcon {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  -webkit-clip-path: inset(0px round 36px);
-  -moz-clip-path: inset(0px round 36px);
-  clip-path: inset(0px round 36px);
-  transition: 1s;
+  z-index: -1;
+  -webkit-clip-path: inset(0px round 20%);
+  -moz-clip-path: inset(0px round 20%);
+  clip-path: inset(0px round 20%);
+  transition: 0.3s;
+  pointer-events: none;
 }
 
-.innerIcon:hover {
-  -webkit-clip-path: inset(5px round 24px);
-  -moz-clip-path: inset(5px round 24px);
-  clip-path: inset(5px round 24px);
-  transform: scale(1.1);
+.outerIcon {
+  position: absolute;
+  transform: rotate3d(0, 0, 0, 0deg);
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.outerIcon > img {
+  width: 100%;
+  height: 100%;
+}
+
+.innerIcon > img {
+  width: 100%;
+  height: 100%;
 }
 
 .outerIcon {
@@ -143,22 +212,20 @@ body {
   pointer-events: none;
 }
 
-@keyframes fadeIn {
-  from {
-    background: #131313;
-  }
-  to {
-    background: #fff;
-  }
+.gameInfo {
+  bottom: 0px;
+  height: 20px;
+  text-align: center;
+  margin-top: 20px;
+  vertical-align: middle;
+  font-size: 16px;
+  font-family: Raleway;
+  color: white;
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
 }
-@keyframes fadeOut {
-  from {
-    background: #fff;
-  }
-  to {
-    background: #131313;
-  }
-}
+
 @keyframes buttonFade {
   from {
     color: white;
