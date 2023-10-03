@@ -1,4 +1,27 @@
 <html>
+	<script>
+		var ua = navigator.userAgent;
+		
+		if(window.location.pathname.includes("tsuki"))
+		{
+			//window.location.replace("https://apps.apple.com/by/app/tsukis-odyssey/id1564146071");
+			
+			if(navigator.platform.includes("iPhone"))
+			{
+				window.location = "https://apps.apple.com/by/app/tsukis-odyssey/id1564146071";
+				//return true;
+			}
+			else if(navigator.platform.includes("Linux"))
+			{
+				window.location = "https://play.google.com/store/apps/details?id=com.hyperbeard.odyssey";
+				//return false;
+			}
+			else
+			{
+				window.location = "https://hyperbeard.com/game/tsukisodyssey";
+			}
+		}
+	</script>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<title>RapBot Studios</title>
@@ -6,53 +29,54 @@
 		<div class="bannerBacking" id="bannerBack">
 		<div class="banner">
 			<div class="buttonGroup">
-				<a href="#" class="btn about" role="button">ABOUT</a>
+				<!-- <a href="#" class="btn about" role="button">ABOUT</a> -->
 				<a href="http://blog.rapbotstudios.com" class="btn blog" role="button">BLOG</a>
-        <div class="logo" id="logo"><img src="https://rapbotstudios.com/images/logo.svg" alt="Logo"></div>
+        <div class="logo" id="logo"><img src="images/logo.svg" alt="Logo"></div>
 				<a href="mailto:hello@rapbotstudios.com" class="btn contact" role="button">CONTACT</a>
-				<a href="#" class="btn press" role="button">PRESS</a>
+				<!-- <a href="#" class="btn press" role="button">PRESS</a> -->
 			</div>
 		</div>
 	</div>
 	</head>
 	<body>
   <div class = "gameGroup">
-	<div class = "game">
-<div id = "wurmwood" class="icon">
-	<div class = "innerIcon">
-	<img src="https://github.com/uniquecorn/wapbot/raw/master/public/images/wurmLayer1.png"/>
-  </div>
-  <div class = "outerIcon">
-  <img src="https://github.com/uniquecorn/wapbot/raw/master/public/images/wurmLayer2.png"/>
-  </div>
-</div>
-  <div class = "gameInfo">WURMWOOD
-  </div>
-</div>
-<div class = "game">
+	<button class = "game" onclick="location.href = 'https://www.youtube.com/watch?v=3b5aV75NcFs';">
+		<div id = "wurmwood" class="icon">
+			<div class = "innerIcon">
+				<img src="images/wurmLayer1.png"/>
+				<div class = "outerIcon">
+					<img src="images/wurmLayer2.png"/>
+				</div>
+  			</div>
+		</div>
+  		<div class = "gameInfo">WURMWOOD
+  		</div>
+	</button>
+<!-- <div class = "game">
 <div id = "vale" class="icon">
 	<div class = "innerIcon">
-	<img src="https://github.com/uniquecorn/wapbot/raw/master/public/images/blackhandLayer1.png"/>
+	<img src="images/blackhandLayer1.png"/>
+	<div class = "outerIcon">
+		<img src="images/blackhandLayer2.png"/>
+		</div>
   </div>
-  <div class = "outerIcon">
-  <img src="https://github.com/uniquecorn/wapbot/raw/master/public/images/blackhandLayer2.png"/>
-  </div>
+  
 </div>
   <div class = "gameInfo">BLACKHAND
-  </div>
-</div>
-	<div class = "game">
-<div id = "tsuki" class="icon">
-	<div class = "innerIcon">
-	<img src="https://github.com/uniquecorn/wapbot/raw/master/public/images/tsukiLayer1.png"/>
-  </div>
-  <div class = "outerIcon">
-  <img src="https://github.com/uniquecorn/wapbot/raw/master/public/images/tsukiLayer2.png"/>
-  </div>
-</div>
-    <div class = "gameInfo">TSUKI
-  </div>
-</div>
+  </div>window.location.href = \"http://stackoverflow.com\";
+</div> -->
+	<button class = "game" onclick="location.href = 'tsuki';">
+		<div id = "tsuki" class="icon">
+			<div class = "innerIcon">
+				<img src="images/tsukiLayer1.png"/>
+				<div class = "outerIcon">
+					<img src="images/tsukiLayer2.png"/>
+				</div>
+			</div>
+		</div>
+    	<div class = "gameInfo">TSUKI'S ODYSSEY
+  		</div>
+	</button>
 </div>
   </div>
   <div class="bottomBacking" id="bannerBottom">

@@ -107,24 +107,28 @@ body {
   display: flex;
   flex-flow: row wrap;
   position: relative;
-  width: 75%;
+  width: 100%;
   max-width: 1300px;
   top: 150px;
   height: 400px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 0;
   border: 0;
   margin: auto;
 }
 
 .game {
-  width: 20vw;
-  height: 20vw;
+  width: 25vw;
+  height: 25vw;
   max-width: 200px;
   max-height: 200px;
   display: inline-block;
   transition: 0.3s;
+  background-color: rgba(0, 0, 0, 0);
   transform: translate(0, 15%);
+  border-color: rgba(0, 0, 0, 0);
+  padding: 0px;
+  border: 0px;
 }
 
 .icon {
@@ -138,6 +142,20 @@ body {
   pointer-events: none;
 }
 
+.gameInfo {
+  bottom: 0px;
+  height: 20px;
+  text-align: center;
+  margin-top: 20px;
+  vertical-align: middle;
+  font-size: 16px;
+  font-family: Raleway;
+  color: white;
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
 @media (min-width: 601px) {
   .game:hover .innerIcon {
     -webkit-clip-path: inset(8% round 50%);
@@ -145,11 +163,9 @@ body {
     clip-path: inset(8% round 50%);
     transform: scale(1.25) rotate3d(1, 0.5, 0, 30deg);
   }
-
   .game:hover .outerIcon {
-    transform: translateZ(100px) rotate3d(0, -0.5, 0, 20deg) scale(0.9);
+    transform: translateZ(100px) rotate3d(-0.5, 1.5, 0, -30deg) scale(1);
   }
-
   .game:hover .gameInfo {
     opacity: 1;
   }
@@ -158,24 +174,21 @@ body {
   .bannerBacking {
     height: 75px;
   }
-
   .btn {
     font-size: 16px;
   }
-
   .game:active .innerIcon {
     -webkit-clip-path: inset(8% round 50%);
     -moz-clip-path: inset(8% round 50%);
     clip-path: inset(8% round 50%);
     transform: scale(1.25) rotate3d(1, 0.5, 0, 30deg);
   }
-
   .game:active .outerIcon {
-    transform: translateZ(100px) rotate3d(0, -0.5, 0, 20deg) scale(0.9);
+    transform: translateZ(100px) rotate3d(-0.5, 1.5, 0, -30deg) scale(1);
   }
-
-  .game:active .gameInfo {
+  .gameInfo {
     opacity: 1;
+    font-size: 12px;
   }
 }
 .innerIcon {
@@ -192,9 +205,11 @@ body {
 
 .outerIcon {
   position: absolute;
+  top: 0;
   transform: rotate3d(0, 0, 0, 0deg);
   transition: 0.3s;
   pointer-events: none;
+  clip-path: none;
 }
 
 .outerIcon > img {
@@ -205,25 +220,6 @@ body {
 .innerIcon > img {
   width: 100%;
   height: 100%;
-}
-
-.outerIcon {
-  position: absolute;
-  pointer-events: none;
-}
-
-.gameInfo {
-  bottom: 0px;
-  height: 20px;
-  text-align: center;
-  margin-top: 20px;
-  vertical-align: middle;
-  font-size: 16px;
-  font-family: Raleway;
-  color: white;
-  opacity: 0;
-  transition: 0.3s;
-  pointer-events: none;
 }
 
 @keyframes buttonFade {
