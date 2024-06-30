@@ -1,28 +1,7 @@
 <html>
-	<script>
-		var ua = navigator.userAgent;
-		
-		if(window.location.pathname.includes("tsuki"))
-		{
-			//window.location.replace("https://apps.apple.com/by/app/tsukis-odyssey/id1564146071");
-			
-			if(navigator.platform.includes("iPhone"))
-			{
-				window.location = "https://apps.apple.com/by/app/tsukis-odyssey/id1564146071";
-				//return true;
-			}
-			else if(navigator.platform.includes("Linux"))
-			{
-				window.location = "https://play.google.com/store/apps/details?id=com.hyperbeard.odyssey";
-				//return false;
-			}
-			else
-			{
-				window.location = "https://hyperbeard.com/game/tsukisodyssey";
-			}
-		}
-	</script>
+	<script src="main.js"></script>
 	<head>
+		<meta name="apple-itunes-app" content="app-id=1564146071, app-argument=tsukiodyssey://secret">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<title>RapBot Studios</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -39,7 +18,7 @@
 	</div>
 	</head>
 	<body>
-  <div class = "gameGroup">
+  <!-- <div class = "gameGroup">
 	<button class = "game" onclick="location.href = 'https://www.youtube.com/watch?v=3b5aV75NcFs';">
 		<div id = "wurmwood" class="icon">
 			<div class = "innerIcon">
@@ -52,6 +31,23 @@
   		<div class = "gameInfo">WURMWOOD
   		</div>
 	</button>
+	<button class = "game" onclick="location.href = 'tsuki';">
+		<div id = "tsuki" class="icon">
+			<div class = "innerIcon">
+				<img src="images/tsukiLayer1.png"/>
+				<div class = "outerIcon">
+					<img src="images/tsukiLayer2.png"/>
+				</div>
+			</div>
+		</div>
+    	<div class = "gameInfo">TSUKI'S ODYSSEY
+  		</div>
+	</button>
+</div> -->
+  <div class="bottomBacking" id="bannerBottom">
+  </div>
+	</body>
+</html>
 <!-- <div class = "game">
 <div id = "vale" class="icon">
 	<div class = "innerIcon">
@@ -65,21 +61,3 @@
   <div class = "gameInfo">BLACKHAND
   </div>window.location.href = \"http://stackoverflow.com\";
 </div> -->
-	<button class = "game" onclick="location.href = 'tsuki';">
-		<div id = "tsuki" class="icon">
-			<div class = "innerIcon">
-				<img src="images/tsukiLayer1.png"/>
-				<div class = "outerIcon">
-					<img src="images/tsukiLayer2.png"/>
-				</div>
-			</div>
-		</div>
-    	<div class = "gameInfo">TSUKI'S ODYSSEY
-  		</div>
-	</button>
-</div>
-  </div>
-  <div class="bottomBacking" id="bannerBottom">
-  </div>
-	</body>
-</html>
