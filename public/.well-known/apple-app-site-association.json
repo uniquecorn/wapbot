@@ -1,0 +1,28 @@
+{
+    "applinks": {
+        "details": [
+             {
+               "appIDs": [ "1564146071.com.hyperbeard.odyssey"],
+               "components": [
+                 {
+                    "#": "no_universal_links",
+                    "exclude": true,
+                    "comment": "Matches any URL with a fragment that equals no_universal_links and instructs the system not to open it as a universal link."
+                 },
+                 {
+                    "/": "/tsuki",
+                    "comment": "Matches any URL with a path that starts with /buy/."
+                 }
+               ]
+             }
+         ]
+     },
+     "webcredentials": {
+        "apps": [ "1564146071.com.hyperbeard.odyssey" ]
+     },
+  
+  
+      "appclips": {
+          "apps": []
+      }
+  }

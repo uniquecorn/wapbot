@@ -33,7 +33,7 @@ function addGames() {
     gameGroup.className = "gameGroup";
     for(let i = 0; i < apps.length; i++) {
         if(window.location.pathname.includes(apps[i].url)) {
-            openGame(apps[i]);
+            openGame(apps[i],false);
             return;
         }
         gameGroup.appendChild(createGame(apps[i]));
@@ -66,7 +66,7 @@ function createGame(appLink) {
     let game = document.createElement("button");
     game.className = "game";
     game.onclick = function() {
-        openGame(appLink);
+        openGame(appLink,true);
     }
     let icon = document.createElement("div");
     icon.id = appLink.url;
@@ -90,30 +90,13 @@ function createGame(appLink) {
     game.appendChild(gameInfo);
     return game;
 }
-function openGame(appLink) {
-    if(appLink.deeplink !== "") {
-        let iframe = document.createElement('iframe');
-        document.body.appendChild(iframe);
-        iframe.style.display = 'none';
-        iframe.contentDocument.write('\<script\>window.location="'+appLink.deeplink+ '";\</script\>');
+function openGame(appLink,fromButton) {
+    if(!fromButton) {
+        window.location = GetStoreURL(appLink);
     }
-    // setTimeout(function() {
-    //     if (hasFocus) {
-    //         if(appLink.ios !== "" && isIOS()) {
-    //             window.location = appStoreURL + appLink.ios;
-    //         }
-    //         else if(appLink.android != "" && isAndroid()) {
-    //             window.location = playStoreURL + appLink.android;
-    //         }
-    //         else {
-    //             window.location = appLink.web;
-    //         }
-    //     }
-    //     else {
-    //         window.close();
-    //     }
-    //   }, 500);
-    //   window.open(appLink.deeplink,'_parent','');
+    else {
+        window.open(GetStoreURL(appLink),'_parent','');
+    }
 }
 function isIOS() {
     return navigator.userAgent.match('iPad') || 
@@ -122,4 +105,14 @@ function isIOS() {
 }
 function isAndroid() {
     return navigator.userAgent.match('Android');
+}
+function GetStoreURL(appLink) {
+    let url = appLink.web;
+    if(appLink.ios !== "" && isIOS()) {
+        url = appStoreURL + appLink.ios;
+    }
+    else if(appLink.android !== "" && isAndroid()) {
+        url = playStoreURL + appLink.android;
+    }
+    return url;
 }
